@@ -27,7 +27,7 @@ In object detection field you work to recognize *what* and *where* specific obje
 
 All type of R-CNN use regions to localize objects, the network don't look at the complete image. YOLO uses a totally different approach. YOLO is a clever convolutional neural network (CNN) for doing object detection in real-time.  The algorithm applies a single neural network to the full image, and then divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities.
 
- <div style="text-align:center"><img src="images/YOLO_image_splitted.png" width="400"></div>
+ <p align="center"><img src="images/YOLO_image_splitted.png" width="400"></p>
 
 The algorithm *"only looks ones"* must be understood in the sense that it requires only one forward propagation pass through the neural network to make predictions. After non-max suppression (which makes sure the object detection algorithm only detects each object once), it outputs the bounding boxes of the recognized objects.
 With YOLO, a single CNN simultaneously predicts multiple bounding boxes and class probabilities for those boxes, this makes YOLO really fast (base network proposed in the first version of the project runs at 45 frames per second with no batch processing on a Titan X GPU and a fast version runs at more than 150 fps. This
@@ -38,7 +38,7 @@ less than 25 milliseconds of latency).
 The model is implemented as a convolutional neural network. The initial layers extract features from the image while the fully connected layers predict the output probabilities and coordinates.\
 The network is inspired by the GoogLeNet model for image classification. The network has 24 convolutional layers followed by 2 fully connected layers. It use 1 x 1 reduction layers followed by 3 x 3 convolutional layers. The final output of the network is the 7 x 7 x 30 tensor of predictions.
 
-<div style="text-align:center"><img src="images/YOLO_architecture.png" width="400"  height="200"></div>
+<p align="center"><img src="images/YOLO_architecture.png" width="400"  height="200"></p>
 
 ## Limitations of YOLO
 YOLO imposes strong spatial constarints of bounding box predictions since each grid cell only predicts two boxes and can only have one class. This constrain limits the number of nearby objects that the model can predict. The performance of this architecture are not so good with small objects, especially if they appear in groups. This occurs because the loss function treats errors the same in small bonding boxes and in large bounding boxes. A small error in large box is generally bening but a small error in a small box has a much greater effect on IOU.
@@ -48,9 +48,9 @@ Recently the  researchers Redmon and Farhadi presented in their 2018 paper *"YOL
 This new version include a new network for performing feature extraction consisting of 53 convolutional layers, a new detection metric, predicting an “objectness” score for each bounding box using logistic regression, and using binary cross-entropy loss for the class predictions during training. The end result is that YOLOv3 runs significantly faster than other detection methods with comparable performance. In addition, YOLO no longer struggles with small objects.
 
 
-YOLOv3 architecture | Speed vs Accuracy comparison
-:------------------:|:---------------------:
-<div style="text-align:center"><img src="images/YOLOv3_architecture.png" width="200"></div>| <div style="text-align:center"><img src="images/YOLOv3_comparison.png" width="250"></div>
+|YOLOv3 architecture | Speed vs Accuracy comparison|
+|:------------------:|:---------------------:|
+|<p align="center"><img src="images/YOLOv3_architecture.png" width="200"></p>| <p align="center"><img src="images/YOLOv3_comparison.png" width="250"></p>|
 
 
 YOLOv3 is a good detector. It’s fast, it’s accurate. It’s
@@ -58,7 +58,7 @@ not as great on the COCO average AP between .5 and .95
 IOU metric. But it’s very good on the old detection metric
 of .5 IOU.
 
-<div style="text-align:center"><img src="images/YOLOv3_vs_others.png" width="550"></div>
+<p align="center"><img src="images/YOLOv3_vs_others.png" width="550"></p>
 
 I want to report on this relation a quote from the paper that i find interesting and above all very topical, where the researchers reflect what computer vision can be used for today
 
