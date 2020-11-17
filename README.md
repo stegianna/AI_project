@@ -27,7 +27,7 @@ In object detection field you work to recognize *what* and *where* specific obje
 
 All type of R-CNN use regions to localize objects, the network don't look at the complete image. YOLO uses a totally different approach. YOLO is a clever convolutional neural network (CNN) for doing object detection in real-time.  The algorithm applies a single neural network to the full image, and then divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities.
 
- <div style="text-align:center"><img src="images/YOLO_image_splitted.png" width="400"></div>
+ <p align="center"><img src="images/YOLO_image_splitted.png" width="400"></p>
 
 The algorithm *"only looks ones"* must be understood in the sense that it requires only one forward propagation pass through the neural network to make predictions. After non-max suppression (which makes sure the object detection algorithm only detects each object once), it outputs the bounding boxes of the recognized objects.
 With YOLO, a single CNN simultaneously predicts multiple bounding boxes and class probabilities for those boxes, this makes YOLO really fast (base network proposed in the first version of the project runs at 45 frames per second with no batch processing on a Titan X GPU and a fast version runs at more than 150 fps. This
