@@ -81,7 +81,12 @@ the harm our work might be doing and think of ways to mitigate it"*
 # Real-time Detection on Google Colab
 YOLOv3 is able to detection multiple objects at the same time. In this specific work i've focused the attention only on people detection.
 
-`PeopleDetection_YOLOv3_streamingWebcam.ipynb` is the jupyter notebook where the code and its explanation is located. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stegianna/AI_project/blob/master/PeopleDetection_YOLOv3_streamingWebcam.ipynb)
+`PeopleDetection_YOLOv3_streamingWebcam.ipynb` is the jupyter notebook where the code and its explanation is located.\
+To run it you need to log in with your Google account [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/stegianna/AI_project/blob/master/PeopleDetection_YOLOv3_streamingWebcam.ipynb) 
+
+
+It is strongly recommended to use the gpu as accelerator. To do this `Go to Menu > Runtime > Change runtime`. Change hardware acceleration to GPU. \
+Once the execution has started, it is necessary to give to browser the permission to access the webcam.
 
 # Pedestrian Detection
 After seen how to detect people in real-time where the video flow is streamed by a webcam, it's easy to ask this question: "In what scenario can this technology be useful?". \
